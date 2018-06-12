@@ -6,14 +6,17 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat.startActivityForResult
-import android.support.v4.content.ContextCompat.startActivity
 import android.view.*
 import android.widget.*
 import android.widget.Toast
 import android.widget.AdapterView
 import java.io.Serializable
 
+// The question mark indicates that this variable can contain null
+// A data class is a POJO (Plain Old Java Object) which Kotlin will create
+// containing the mentioned private member variables and getters/setters for each.
+// It will also contain a default constructor and an overloaded constructor with the
+// private member variables listed.
 data class Task(var title: String?,
                 var description: String?,
                 var date: String?,
@@ -22,6 +25,7 @@ data class Task(var title: String?,
 
 class MainActivity : AppCompatActivity() {
 
+    //The question mark indicates that this variable can contain null
     private var tasks = mutableListOf<Task?>()
 
     var adapter: customAdapter? = customAdapter(this, tasks)
@@ -30,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //mListView = (items_list) findViewById(R.id.items_list)
+
+
+
         val lv = findViewById<ListView>(R.id.items_list)
 
 
@@ -41,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         lv.adapter = adapter
 
-        registerForContextMenu(lv)
+       registerForContextMenu(lv)
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {

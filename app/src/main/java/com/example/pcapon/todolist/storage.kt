@@ -7,9 +7,7 @@ import java.io.FileOutputStream
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
 
-/**
- * Created by pcapon on 04/02/18.
- */
+
 object Storage {
     private val LOG_TAG = Storage::class.java.simpleName
     private val FILE_NAME = "todo_list.ser"

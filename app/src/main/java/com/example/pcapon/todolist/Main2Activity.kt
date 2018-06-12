@@ -11,10 +11,6 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TimePicker
-import com.example.pcapon.todolist.MainActivity.Companion.DESCRIPTION_TEXT
-import com.example.pcapon.todolist.MainActivity.Companion.POSITION
-import kotlinx.android.synthetic.main.activity_main2.*
-import kotlinx.android.synthetic.main.row_main.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -113,7 +109,7 @@ class Main2Activity : AppCompatActivity() {
 
     private fun updateDateInView() {
         val datetext = findViewById<EditText>(R.id.task_date)
-        val myFormat = "EEE, d MMM yyyy" // mention the format you need
+        val myFormat = "EEE, d MMM yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         datetext.setText(sdf.format(cal.getTime()))
     }
